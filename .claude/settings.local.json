@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where.exe npm:*)",
+      "Bash(where.exe node:*)",
+      "Bash(where.exe docker:*)",
+      "Bash(npm install:*)",
+      "Bash(\"/c/Program Files/Docker/Docker/Docker Desktop.exe\")",
+      "Bash(disown)",
+      "Bash(docker version:*)"
+    ]
+  }
+}

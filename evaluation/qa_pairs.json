@@ -1,0 +1,42 @@
+[
+  {
+    "paper_filename": "sample_paper.pdf",
+    "question": "What is the main contribution of this paper?",
+    "ground_truth_answer": "The main contribution is described in the abstract and introduction sections.",
+    "ground_truth_chunk_indices": [0, 1, 2],
+    "ground_truth_page": 1,
+    "difficulty": "factual"
+  },
+  {
+    "paper_filename": "sample_paper.pdf",
+    "question": "What methodology was used in the experiments?",
+    "ground_truth_answer": "The methodology is described in the methods section.",
+    "ground_truth_chunk_indices": [5, 6, 7],
+    "ground_truth_page": 3,
+    "difficulty": "factual"
+  },
+  {
+    "paper_filename": "sample_paper.pdf",
+    "question": "What are the key findings and results?",
+    "ground_truth_answer": "The key findings are presented in the results section.",
+    "ground_truth_chunk_indices": [10, 11, 12],
+    "ground_truth_page": 5,
+    "difficulty": "factual"
+  },
+  {
+    "paper_filename": "sample_paper.pdf",
+    "question": "What are the limitations discussed by the authors?",
+    "ground_truth_answer": "Limitations are discussed in the discussion or conclusion section.",
+    "ground_truth_chunk_indices": [15, 16],
+    "ground_truth_page": 7,
+    "difficulty": "reasoning"
+  },
+  {
+    "paper_filename": "sample_paper.pdf",
+    "question": "How does this work compare to prior research?",
+    "ground_truth_answer": "Comparisons to prior work are in the related work section.",
+    "ground_truth_chunk_indices": [3, 4],
+    "ground_truth_page": 2,
+    "difficulty": "reasoning"
+  }
+]

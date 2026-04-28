@@ -5,10 +5,17 @@ from pathlib import Path
 
 import pytest
 
-# Add evaluation dir to path so we can import metrics
-sys.path.insert(0, str(Path(__file__).parents[3] / "evaluation"))
+# The evaluation/ module sits alongside backend/ on the host but is not mounted
+# into the backend container, so skip gracefully when it isn't reachable.
+_eval_dir = Path(__file__).parents[3] / "evaluation"
+if not (_eval_dir / "metrics.py").exists():
+    pytest.skip(
+        f"evaluation module not reachable at {_eval_dir} (expected when running inside the backend container)",
+        allow_module_level=True,
+    )
+sys.path.insert(0, str(_eval_dir))
 
-from metrics import (
+from metrics import (  # noqa: E402
     EvalSample,
     citation_precision,
     citation_recall,

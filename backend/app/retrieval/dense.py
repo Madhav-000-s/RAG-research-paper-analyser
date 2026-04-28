@@ -30,10 +30,10 @@ async def dense_search(
     result = await db.execute(
         text("""
             SELECT id, chunk_index, content, page_number, section_heading,
-                   1 - (embedding <=> :query_vec::vector) AS score
+                   1 - (embedding <=> CAST(:query_vec AS vector)) AS score
             FROM chunks
             WHERE paper_id = :paper_id
-            ORDER BY embedding <=> :query_vec::vector
+            ORDER BY embedding <=> CAST(:query_vec AS vector)
             LIMIT :top_k
         """),
         {

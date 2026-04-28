@@ -42,7 +42,8 @@ async def upload_paper(
         pdf_path=str(pdf_path),
     )
     db.add(paper)
-    await db.flush()
+    await db.commit()
+    await db.refresh(paper)
 
     # Kick off ingestion in background
     from app.ingestion.pipeline import ingest_paper
